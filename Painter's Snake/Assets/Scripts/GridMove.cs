@@ -11,8 +11,6 @@ public class GridMove : MonoBehaviour
     public Vector3 StartingMove;
     public ColorState StartingColor;
     public int PlayerNum;
-    public Material Color1Mat;
-    public Material Color2Mat;
     public GameObject PaintTrail;
     
     //Private
@@ -52,10 +50,10 @@ public class GridMove : MonoBehaviour
         _rewiredPlayer = ReInput.players.GetPlayer(PlayerNum);
         _colorSwitch = false;
         _playerColor = StartingColor;
-        NewTrail();
+        _grid = GameObject.Find("GridManager").GetComponent<GridManager>();
         _target = transform.position;
         _playerState = PlayerState.Painting;
-        _grid = GameObject.Find("GridManager").GetComponent<GridManager>();
+        NewTrail();
     }
 
     // Update is called once per frame
@@ -149,13 +147,13 @@ public class GridMove : MonoBehaviour
         {
             _colorSwitch = false;
             _playerColor = ColorState.Color2;
-            _lineRenderer.material = Color2Mat;
+            _lineRenderer.material = _grid.Color2Mat;
         }
         else
         {
             _colorSwitch = false;
             _playerColor = ColorState.Color1;
-            _lineRenderer.material = Color1Mat;
+            _lineRenderer.material = _grid.Color1Mat;
         }
     }
 
@@ -191,12 +189,6 @@ public class GridMove : MonoBehaviour
             }
         }
         
-    }
-
-    public void MaterialChange(Material color1, Material color2)
-    {
-        Color1Mat = color1;
-        Color2Mat = color2;
     }
     
     //Trigger checks for hitting nodes

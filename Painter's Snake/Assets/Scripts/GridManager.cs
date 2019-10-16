@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Rewired.Platforms.XboxOne;
 using UnityEngine;
 
@@ -13,8 +14,10 @@ public class GridManager : MonoBehaviour
     public float GridDist;
     public Vector2 StartPoint;
     public Material[] PaintMaterials;
-    public GridMove Player1Script;
-    public GridMove Player2Script;
+    public GameObject Brush1;
+    public GameObject Brush2;
+    public Material Color1Mat;
+    public Material Color2Mat;
     
     //Private
     private List<GameObject> _nodeList = new List<GameObject>();
@@ -24,7 +27,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         SpawnNodes();
-        _newColors.AddRange(PaintMaterials); //put all the colors into _newColors
+        FirstRound();
     }
 
     //Called at the very start of the game to set up the grid
@@ -42,6 +45,24 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    //Called for the first round
+    private void FirstRound()
+    {
+        _newColors.AddRange(PaintMaterials); //put all the colors into _newColors
+        
+        int color1Pick = Random.Range(0, _newColors.Count - 1);
+        Material newColor1 = _newColors[color1Pick];
+        _newColors.Remove(newColor1);
+        Color1Mat = newColor1;
+
+        int color2Pick = Random.Range(0, _newColors.Count - 1);
+        Material newColor2 = _newColors[color2Pick];
+        _newColors.Remove(newColor2);
+        Color2Mat = newColor2;
+        Instantiate(Brush1);
+        Instantiate(Brush2);
+    }
+    
     //Called when a new round begins
     public void NextRound()
     {
@@ -50,12 +71,12 @@ public class GridManager : MonoBehaviour
         if (whichColor % 2 == 0)
         {
             //Color 1 remains
-            int colorPick = Random.Range(0, _newColors.Count - 1);
-            Material newColor = _newColors[colorPick];
-            _newColors.Remove(newColor);
-            _newColors.Add(Player1Script.Color1Mat);
-            Player1Script.MaterialChange(Player1Script.Color1Mat, newColor);
-            Player2Script.MaterialChange(Player2Script.Color1Mat, newColor);
+            int colorPick = Random.Range(0, _newColors.Count - 1); //pick a random value
+            Material newColor = _newColors[colorPick]; //use that value to grab a color from the list
+            _newColors.Remove(newColor); //remove that color from the list
+            _newColors.Add(Color2Mat); //add the color being replaced back into the list
+            Color2Mat = newColor; //change the material to the new color
+            UpdateNodes(NodeManager.ColorState.Color2);
         }
         else
         {
@@ -63,16 +84,23 @@ public class GridManager : MonoBehaviour
             int colorPick = Random.Range(0, _newColors.Count - 1);
             Material newColor = _newColors[colorPick];
             _newColors.Remove(newColor);
-            _newColors.Add(Player1Script.Color2Mat);
-            Player1Script.MaterialChange(newColor, Player1Script.Color2Mat);
-            Player2Script.MaterialChange(newColor, Player2Script.Color2Mat);
+            _newColors.Add(Color1Mat);
+            Color1Mat = newColor;
+            UpdateNodes(NodeManager.ColorState.Color1);
         }
     }
 
     //Called in NextRound when it is time to check which color remains
     //for the color that no longer remains those nodes get marked empty
-    private void UpdateNodes()
+    private void UpdateNodes(NodeManager.ColorState swappedColor)
     {
-        
+        foreach (GameObject node in _nodeList)
+        {
+            var nodeColor = node.GetComponent<NodeManager>().NodeColor;
+            if (nodeColor == swappedColor)
+            {
+                nodeColor = NodeManager.ColorState.Empty;
+            }
+        }
     }
 }
