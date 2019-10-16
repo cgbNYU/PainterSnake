@@ -22,6 +22,8 @@ public class GridManager : MonoBehaviour
     //Private
     private List<GameObject> _nodeList = new List<GameObject>();
     private List<Material> _newColors = new List<Material>();
+    private GridMove _brush1Script;
+    private GridMove _brush2Script;
     
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,8 @@ public class GridManager : MonoBehaviour
         Color2Mat = newColor2;
         Instantiate(Brush1);
         Instantiate(Brush2);
+        _brush1Script = Brush1.GetComponent<GridMove>();
+        _brush2Script = Brush2.GetComponent<GridMove>();
     }
     
     //Called when a new round begins
@@ -102,5 +106,7 @@ public class GridManager : MonoBehaviour
                 nodeColor = NodeManager.ColorState.Empty;
             }
         }
+        _brush1Script.Respawn();
+        _brush2Script.Respawn();
     }
 }

@@ -188,9 +188,20 @@ public class GridMove : MonoBehaviour
                 Debug.Log("Die " + _playerColor);
             }
         }
-        
     }
-    
+
+    public void Respawn()
+    {
+        _moveDir = StartingMove;
+        _prevDir = _moveDir;
+        _rewiredPlayer = ReInput.players.GetPlayer(PlayerNum);
+        _colorSwitch = false;
+        _playerColor = StartingColor;
+        _target = transform.position;
+        _playerState = PlayerState.Painting;
+        NewTrail();
+    }
+
     //Trigger checks for hitting nodes
     private void OnTriggerEnter2D(Collider2D other)
     {
