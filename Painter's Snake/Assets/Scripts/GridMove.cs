@@ -20,6 +20,7 @@ public class GridMove : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
     private GridManager _grid;
+    private Vector3 _startPos;
     
     
     //Enumerator
@@ -45,6 +46,7 @@ public class GridMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _startPos = transform.position;
         _moveDir = StartingMove;
         _prevDir = _moveDir;
         _rewiredPlayer = ReInput.players.GetPlayer(PlayerNum);
@@ -140,7 +142,7 @@ public class GridMove : MonoBehaviour
     private void NewTrail()
     {
         GameObject newTrail = Instantiate(PaintTrail, transform.position, transform.rotation);
-        newTrail.transform.parent = transform;
+        //newTrail.transform.parent = transform;
         _lineRenderer = newTrail.GetComponent<LineRenderer>();
         _lineRenderer.SetPosition(0, transform.position);
         if (_playerColor == ColorState.Color1)
@@ -192,9 +194,9 @@ public class GridMove : MonoBehaviour
 
     public void Respawn()
     {
+        transform.position = _startPos;
         _moveDir = StartingMove;
         _prevDir = _moveDir;
-        _rewiredPlayer = ReInput.players.GetPlayer(PlayerNum);
         _colorSwitch = false;
         _playerColor = StartingColor;
         _target = transform.position;

@@ -61,10 +61,10 @@ public class GridManager : MonoBehaviour
         Material newColor2 = _newColors[color2Pick];
         _newColors.Remove(newColor2);
         Color2Mat = newColor2;
-        Instantiate(Brush1);
-        Instantiate(Brush2);
-        _brush1Script = Brush1.GetComponent<GridMove>();
-        _brush2Script = Brush2.GetComponent<GridMove>();
+        GameObject newBrush1 = Instantiate(Brush1);
+        GameObject newBrush2 = Instantiate(Brush2);
+        _brush1Script = newBrush1.GetComponent<GridMove>();
+        _brush2Script = newBrush2.GetComponent<GridMove>();
     }
     
     //Called when a new round begins
