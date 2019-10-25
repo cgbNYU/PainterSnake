@@ -70,7 +70,7 @@ public class GridManager : MonoBehaviour
     //Called when a new round begins
     public void NextRound()
     {
-        //Randomly pick which of the 2 colors will remain
+        /*//Randomly pick which of the 2 colors will remain
         int whichColor = Random.Range(1, 2);
         if (whichColor % 2 == 0)
         {
@@ -91,7 +91,19 @@ public class GridManager : MonoBehaviour
             _newColors.Add(Color1Mat);
             Color1Mat = newColor;
             UpdateNodes(NodeManager.ColorState.Color1);
-        }
+        }*/
+        
+        //Color 1 remains
+        int colorPick = Random.Range(0, _newColors.Count - 1); //pick a random value
+        Material newColor = _newColors[colorPick]; //use that value to grab a color from the list
+        _newColors.Remove(newColor); //remove that color from the list
+        _newColors.Add(Color2Mat); //add the color being replaced back into the list
+        Color2Mat = newColor; //change the material to the new color
+        UpdateNodes(NodeManager.ColorState.Color2); //reset the nodes that were Color2
+        Color2Mat = Color1Mat; //color 1 moves to the second slot
+        Color1Mat = newColor; //the new color is now the fyirst color
+        _brush1Script.Respawn();
+        _brush2Script.Respawn();
     }
 
     //Called in NextRound when it is time to check which color remains
@@ -106,7 +118,5 @@ public class GridManager : MonoBehaviour
                 nodeColor = NodeManager.ColorState.Empty;
             }
         }
-        _brush1Script.Respawn();
-        _brush2Script.Respawn();
     }
 }
