@@ -25,9 +25,18 @@ public class GridManager : MonoBehaviour
     private GridMove _brush1Script;
     private GridMove _brush2Script;
     
+    //Singleton
+    public static GridManager Instance;
+    
     // Start is called before the first frame update
     void Start()
     {
+        //Set up the singleton
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+        
         SpawnNodes();
         FirstRound();
     }
@@ -61,62 +70,15 @@ public class GridManager : MonoBehaviour
         Material newColor2 = _newColors[color2Pick];
         _newColors.Remove(newColor2);
         Color2Mat = newColor2;
-        GameObject newBrush1 = Instantiate(Brush1);
+        
+        /*GameObject newBrush1 = Instantiate(Brush1);
         GameObject newBrush2 = Instantiate(Brush2);
         _brush1Script = newBrush1.GetComponent<GridMove>();
-        _brush2Script = newBrush2.GetComponent<GridMove>();
+        _brush2Script = newBrush2.GetComponent<GridMove>();*/
     }
     
     //Called when a new round begins
     public void NextRound()
     {
-        /*//Randomly pick which of the 2 colors will remain
-        int whichColor = Random.Range(1, 2);
-        if (whichColor % 2 == 0)
-        {
-            //Color 1 remains
-            int colorPick = Random.Range(0, _newColors.Count - 1); //pick a random value
-            Material newColor = _newColors[colorPick]; //use that value to grab a color from the list
-            _newColors.Remove(newColor); //remove that color from the list
-            _newColors.Add(Color2Mat); //add the color being replaced back into the list
-            Color2Mat = newColor; //change the material to the new color
-            UpdateNodes(NodeManager.ColorState.Color2);
-        }
-        else
-        {
-            //Color 2 remains
-            int colorPick = Random.Range(0, _newColors.Count - 1);
-            Material newColor = _newColors[colorPick];
-            _newColors.Remove(newColor);
-            _newColors.Add(Color1Mat);
-            Color1Mat = newColor;
-            UpdateNodes(NodeManager.ColorState.Color1);
-        }*/
-        
-        //Color 1 remains
-        int colorPick = Random.Range(0, _newColors.Count - 1); //pick a random value
-        Material newColor = _newColors[colorPick]; //use that value to grab a color from the list
-        _newColors.Remove(newColor); //remove that color from the list
-        _newColors.Add(Color2Mat); //add the color being replaced back into the list
-        Color2Mat = newColor; //change the material to the new color
-        UpdateNodes(NodeManager.ColorState.Color2); //reset the nodes that were Color2
-        Color2Mat = Color1Mat; //color 1 moves to the second slot
-        Color1Mat = newColor; //the new color is now the fyirst color
-        _brush1Script.Respawn();
-        _brush2Script.Respawn();
-    }
-
-    //Called in NextRound when it is time to check which color remains
-    //for the color that no longer remains those nodes get marked empty
-    private void UpdateNodes(NodeManager.ColorState swappedColor)
-    {
-        foreach (GameObject node in _nodeList)
-        {
-            var nodeColor = node.GetComponent<NodeManager>().NodeColor;
-            if (nodeColor == swappedColor)
-            {
-                nodeColor = NodeManager.ColorState.Empty;
-            }
-        }
     }
 }

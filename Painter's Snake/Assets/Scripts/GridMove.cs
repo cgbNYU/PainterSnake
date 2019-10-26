@@ -9,6 +9,7 @@ public class GridMove : MonoBehaviour
     public float Speed;
     public float GridDist;
     public Vector3 StartingMove;
+    public Vector3 StartPos;
     public ColorState StartingColor;
     public int PlayerNum;
     public GameObject PaintTrail;
@@ -17,10 +18,10 @@ public class GridMove : MonoBehaviour
     private Vector3 _moveDir;
     private Vector3 _prevDir;
     private Vector3 _target;
+    private Material _currentColor;
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
-    private GridManager _grid;
-    private Vector3 _startPos;
+    //private GridManager _grid;
     private int _colorId;
     
     
@@ -31,7 +32,7 @@ public class GridMove : MonoBehaviour
         Color2
     }
 
-    private ColorState _playerColor;
+    //private ColorState _playerColor;
     
     public enum PlayerState
     {
@@ -48,13 +49,13 @@ public class GridMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _startPos = transform.position;
+        StartPos = transform.position;
         _moveDir = StartingMove;
         _prevDir = _moveDir;
         _rewiredPlayer = ReInput.players.GetPlayer(PlayerNum);
         _colorSwitch = false;
-        _playerColor = StartingColor;
-        _grid = GameObject.Find("GridManager").GetComponent<GridManager>();
+        _currentColor = ColorManager.Instance.Mat1;
+        //_grid = GameObject.Find("GridManager").GetComponent<GridManager>();
         _target = transform.position;
         _playerState = PlayerState.Painting;
         NewTrail();
@@ -108,6 +109,7 @@ public class GridMove : MonoBehaviour
             {
                 //UpdateLine();
                 TurnPoint();
+                //NewTrail();
                 _prevDir = _moveDir;
             }
         }
@@ -131,11 +133,13 @@ public class GridMove : MonoBehaviour
     
     public void TurnPoint()
     {
-        GameObject newPoint = Instantiate(Resources.Load<GameObject>("Prefabs/TurnPoint"), transform.position, transform.rotation);
-        LineRenderer newLine = newPoint.GetComponent<LineRenderer>();
-        newLine.SetPosition(0, transform.position);
-        _lineRenderer = newLine;
-        
+        GameObject newTrail = Instantiate(PaintTrail, transform.position, transform.rotation);
+        //newTrail.transform.parent = transform;
+        _lineRenderer = newTrail.GetComponent<LineRenderer>();
+        _lineRenderer.SetPosition(0, transform.position);
+        _lineRenderer.material = _currentColor;
+        _lineRenderer.sortingOrder = ColorManager.Instance.SortNum;
+        ColorManager.Instance.SortNum++;
     }
 
     //Hit  button to change your character's color
@@ -156,78 +160,67 @@ public class GridMove : MonoBehaviour
     private void NewTrail()
     {
         GameObject newTrail = Instantiate(PaintTrail, transform.position, transform.rotation);
-        newTrail.transform.parent = transform;
+        //newTrail.transform.parent = transform;
         _lineRenderer = newTrail.GetComponent<LineRenderer>();
         _lineRenderer.SetPosition(0, transform.position);
-        if (_playerColor == ColorState.Color1)
+        if (_currentColor == ColorManager.Instance.Mat1)
         {
             _colorSwitch = false;
-            _playerColor = ColorState.Color2;
-            _lineRenderer.material = _grid.Color2Mat;
+            _currentColor = ColorManager.Instance.Mat2;
+            _lineRenderer.material = _currentColor;
+            _lineRenderer.sortingOrder = ColorManager.Instance.SortNum;
+            ColorManager.Instance.SortNum++;
         }
         else
         {
             _colorSwitch = false;
-            _playerColor = ColorState.Color1;
-            _lineRenderer.material = _grid.Color1Mat;
+            _currentColor = ColorManager.Instance.Mat1;
+            _lineRenderer.material = _currentColor;
+            _lineRenderer.sortingOrder = ColorManager.Instance.SortNum;
+            ColorManager.Instance.SortNum++;
         }
     }
 
     //Called when the Brush triggers a node
     private void NodeColorChange(NodeManager node)
     {
-        if (_playerColor == ColorState.Color1)
+        if (_playerState == PlayerState.Painting)
         {
-            if (node.NodeColor == NodeManager.ColorState.Color2 || node.NodeColor == NodeManager.ColorState.Empty)
+            if (_currentColor == node.NodeColor)
             {
-                node.ColorChange(NodeManager.ColorState.Color1);
+                //die
+                Debug.Log("Die " + _currentColor);
+                GameManager.Instance.PlayerDeath();
             }
             else
             {
-                //die
-                _playerState = PlayerState.Dead;
-                _grid.NextRound();
-                Debug.Log("Die " + _playerColor);
-            }
-        }
-        else
-        {
-            if (node.NodeColor == NodeManager.ColorState.Color1 || node.NodeColor == NodeManager.ColorState.Empty)
-            {
-                node.ColorChange(NodeManager.ColorState.Color2);
-            }
-            else
-            {
-                //die
-                _playerState = PlayerState.Dead;
-                _grid.NextRound();
-                Debug.Log("Die " + _playerColor);
+                node.ColorChange(_currentColor);
             }
         }
     }
 
     public void Respawn()
     {
-        transform.position = _startPos;
+        transform.position = StartPos;
         _moveDir = StartingMove;
         _prevDir = _moveDir;
         _colorSwitch = false;
-        _playerColor = ColorState.Color2;
+        _currentColor = ColorManager.Instance.Mat1;
         _target = transform.position;
         _playerState = PlayerState.Painting;
         NewTrail();
     }
 
-    //Called from external functuons to change player movement state
+    //Called from external functions to change player movement state
     public void SetState(PlayerState newState)
     {
         _playerState = newState;
     }
 
     //Called externally to change colors
-    public void SetColor(int newColorId)
+    public void SetColor(Material newColor)
     {
-        
+        _currentColor = newColor;
     }
 
     //Trigger checks for hitting nodes

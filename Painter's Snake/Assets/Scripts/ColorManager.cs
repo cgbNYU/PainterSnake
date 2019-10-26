@@ -21,6 +21,15 @@ public class ColorManager : MonoBehaviour
     
     //Materials
     public Material[] PaintMaterial;
+
+    public Material Mat1;
+    public Material Mat2;
+    
+    //Color picking int
+    private int _colorNum;
+    
+    //Color layering int
+    public int SortNum;
     
     // Start is called before the first frame update
     void Start()
@@ -30,5 +39,18 @@ public class ColorManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+        SortNum = 0;
+        NewColors();
+    }
+
+    public void NewColors()
+    {
+        if (_colorNum == PaintMaterial.Length - 1)
+        {
+            _colorNum = 0;
+        }
+        Mat1 = PaintMaterial[_colorNum];
+        Mat2 = PaintMaterial[_colorNum + 1];
+        _colorNum++;
     }
 }

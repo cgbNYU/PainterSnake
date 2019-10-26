@@ -6,16 +6,7 @@ using UnityEngine;
 public class NodeManager : MonoBehaviour
 {
     //Public
-    public enum ColorState
-    {
-        Color1,
-        Color2,
-        Empty
-    }
-
-    public ColorState NodeColor;
-
-    public ColorManager.ColorState WhichColor;
+    public Material NodeColor;
     
     //Private
     private GridManager _grid;
@@ -23,10 +14,10 @@ public class NodeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NodeColor = ColorState.Empty;
+        NodeColor = null;
     }
 
-    public void ColorChange(ColorState newColor)
+    public void ColorChange(Material newColor)
     {
         NodeColor = newColor;
     }
