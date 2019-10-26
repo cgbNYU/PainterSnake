@@ -21,6 +21,7 @@ public class GridMove : MonoBehaviour
     private bool _colorSwitch;
     private GridManager _grid;
     private Vector3 _startPos;
+    private int _colorId;
     
     
     //Enumerator
@@ -35,7 +36,8 @@ public class GridMove : MonoBehaviour
     public enum PlayerState
     {
         Painting,
-        Dead
+        Dead,
+        Idle
     }
 
     private PlayerState _playerState;
@@ -70,6 +72,8 @@ public class GridMove : MonoBehaviour
                 break;
             case PlayerState.Dead:
                 break;
+            case PlayerState.Idle:
+                break;
             default:
                 Debug.Log("Player State error");
                 break;
@@ -102,7 +106,8 @@ public class GridMove : MonoBehaviour
             _target += _moveDir * GridDist;
             if (_prevDir != _moveDir)
             {
-                UpdateLine();
+                //UpdateLine();
+                TurnPoint();
                 _prevDir = _moveDir;
             }
         }
@@ -123,6 +128,15 @@ public class GridMove : MonoBehaviour
         _lineRenderer.positionCount += 1;
         _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, transform.position);
     }
+    
+    public void TurnPoint()
+    {
+        GameObject newPoint = Instantiate(Resources.Load<GameObject>("Prefabs/TurnPoint"), transform.position, transform.rotation);
+        LineRenderer newLine = newPoint.GetComponent<LineRenderer>();
+        newLine.SetPosition(0, transform.position);
+        _lineRenderer = newLine;
+        
+    }
 
     //Hit  button to change your character's color
     private void ChangeColor()
@@ -142,7 +156,7 @@ public class GridMove : MonoBehaviour
     private void NewTrail()
     {
         GameObject newTrail = Instantiate(PaintTrail, transform.position, transform.rotation);
-        //newTrail.transform.parent = transform;
+        newTrail.transform.parent = transform;
         _lineRenderer = newTrail.GetComponent<LineRenderer>();
         _lineRenderer.SetPosition(0, transform.position);
         if (_playerColor == ColorState.Color1)
@@ -198,10 +212,22 @@ public class GridMove : MonoBehaviour
         _moveDir = StartingMove;
         _prevDir = _moveDir;
         _colorSwitch = false;
-        _playerColor = StartingColor;
+        _playerColor = ColorState.Color2;
         _target = transform.position;
         _playerState = PlayerState.Painting;
         NewTrail();
+    }
+
+    //Called from external functuons to change player movement state
+    public void SetState(PlayerState newState)
+    {
+        _playerState = newState;
+    }
+
+    //Called externally to change colors
+    public void SetColor(int newColorId)
+    {
+        
     }
 
     //Trigger checks for hitting nodes

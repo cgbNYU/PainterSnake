@@ -14,6 +14,11 @@ public class NodeManager : MonoBehaviour
     }
 
     public ColorState NodeColor;
+
+    public ColorManager.ColorState WhichColor;
+    
+    //Private
+    private GridManager _grid;
     
     // Start is called before the first frame update
     void Start()

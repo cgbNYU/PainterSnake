@@ -138,7 +138,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="ColorManager.cs" t="Include" />
           <e p="FourWayMove.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="GridManager.cs" t="Include" />
           <e p="GridMove.cs" t="Include" />
           <e p="NodeManager.cs" t="Include" />
