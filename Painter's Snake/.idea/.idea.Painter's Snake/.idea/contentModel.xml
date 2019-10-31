@@ -10,6 +10,7 @@
         <e p="Materials" t="Include">
           <e p="Shaders" t="Include">
             <e p="ScreenSpace.shader" t="Include" />
+            <e p="ScreenSpaceUnlit.shader" t="Include" />
           </e>
         </e>
         <e p="Rewired" t="Include">

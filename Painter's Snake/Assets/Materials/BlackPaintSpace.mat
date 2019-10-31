@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BluePaintSpace
+  m_Name: BlackPaintSpace
   m_Shader: {fileID: 4800000, guid: 67527391fa5a2844ea5ad603ed249b2a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ScreenTex:
-        m_Texture: {fileID: 2800000, guid: a4994dd430a10c24a8641b88ef2ac9bd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97a6a0e187ef8d541aa2b14ab00e890f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

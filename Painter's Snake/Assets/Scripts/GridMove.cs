@@ -58,7 +58,7 @@ public class GridMove : MonoBehaviour
         //_grid = GameObject.Find("GridManager").GetComponent<GridManager>();
         _target = transform.position;
         _playerState = PlayerState.Painting;
-        NewTrail();
+        //NewTrail();
     }
 
     // Update is called once per frame
@@ -68,7 +68,7 @@ public class GridMove : MonoBehaviour
         {
             case PlayerState.Painting:
                 Move();
-                TransformLine();
+                //TransformLine();
                 ChangeColor();
                 break;
             case PlayerState.Dead:
@@ -105,10 +105,11 @@ public class GridMove : MonoBehaviour
         if (transform.position == _target)
         {
             _target += _moveDir * GridDist;
+            DropTrail();
             if (_prevDir != _moveDir)
             {
                 //UpdateLine();
-                TurnPoint();
+                //TurnPoint();
                 //NewTrail();
                 _prevDir = _moveDir;
             }
@@ -140,6 +141,12 @@ public class GridMove : MonoBehaviour
         _lineRenderer.material = _currentColor;
         _lineRenderer.sortingOrder = ColorManager.Instance.SortNum;
         ColorManager.Instance.SortNum++;
+    }
+
+    private void DropTrail()
+    {
+        GameObject newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintQuad"), transform.position, transform.rotation);
+        newTrail.GetComponent<Renderer>().material = _currentColor;
     }
 
     //Hit  button to change your character's color
