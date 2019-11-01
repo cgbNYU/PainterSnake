@@ -10,15 +10,22 @@ public class NodeManager : MonoBehaviour
     
     //Private
     private GridManager _grid;
+    private GameObject _colorQuad;
     
     // Start is called before the first frame update
     void Start()
     {
         NodeColor = null;
+        _colorQuad = null;
     }
 
-    public void ColorChange(Material newColor)
+    public void ColorChange(Material newColor, GameObject newQuad)
     {
+        if (_colorQuad != null)
+        {
+            Destroy(_colorQuad);
+        }
         NodeColor = newColor;
+        _colorQuad = newQuad;
     }
 }

@@ -21,6 +21,8 @@ public class GridMove : MonoBehaviour
     private Material _currentColor;
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
+    private GameObject _newTrail;
+    
     //private GridManager _grid;
     private int _colorId;
     
@@ -105,7 +107,7 @@ public class GridMove : MonoBehaviour
         if (transform.position == _target)
         {
             _target += _moveDir * GridDist;
-            DropTrail();
+            //DropTrail();
             if (_prevDir != _moveDir)
             {
                 //UpdateLine();
@@ -143,10 +145,10 @@ public class GridMove : MonoBehaviour
         ColorManager.Instance.SortNum++;
     }
 
-    private void DropTrail()
+    private void DropTrail(GameObject node)
     {
-        GameObject newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintQuad"), transform.position, transform.rotation);
-        newTrail.GetComponent<Renderer>().material = _currentColor;
+        _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintQuad"), node.transform.position, node.transform.rotation);
+        _newTrail.GetComponent<Renderer>().material = _currentColor;
     }
 
     //Hit  button to change your character's color
@@ -158,7 +160,16 @@ public class GridMove : MonoBehaviour
         }
         if (transform.position == _target && _colorSwitch)
         {
-            NewTrail();
+            if (_currentColor == ColorManager.Instance.Mat1)
+            {
+                _currentColor = ColorManager.Instance.Mat2;
+            }
+            else
+            {
+                _currentColor = ColorManager.Instance.Mat1;
+            }
+
+            _colorSwitch = false;
         }
     
     }
@@ -201,7 +212,8 @@ public class GridMove : MonoBehaviour
             }
             else
             {
-                node.ColorChange(_currentColor);
+                DropTrail(node.gameObject);
+                node.ColorChange(_currentColor, _newTrail);
             }
         }
     }

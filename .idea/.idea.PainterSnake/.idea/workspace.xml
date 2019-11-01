@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edb4ebbc-2ccf-4619-861d-c2c1ad3d1596" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Painter's Snake/Assets/Materials/BluePaintSpace.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Painter's Snake/Assets/Materials/BluePaintSpace.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Painter's Snake/Assets/Resources/Prefabs/ColorManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Painter's Snake/Assets/Resources/Prefabs/ColorManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Painter's Snake/.idea/.idea.Painter's Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Painter's Snake/.idea/.idea.Painter's Snake/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Painter's Snake/Assets/Scripts/GridMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Painter's Snake/Assets/Scripts/GridMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Painter's Snake/Assets/Scripts/NodeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Painter's Snake/Assets/Scripts/NodeManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +16,7 @@
     <session id="2123592415">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="2" />
@@ -50,7 +50,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Painter's Snake/Assets/Scripts/GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Painter's Snake/Assets/Materials/Shaders/ScreenSpace.shader">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -107,11 +107,11 @@
       <path value="$PROJECT_DIR$/Painter's Snake/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="951" />
-    <option name="y" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1088" />
+    <option name="y" value="-1059" />
+    <option name="width" value="1096" />
+    <option name="height" value="1896" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -300,7 +300,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570923454781</updated>
       <workItem from="1570923457100" duration="129000" />
-      <workItem from="1572300728999" duration="5021000" />
+      <workItem from="1572300728999" duration="5025000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570923543131</created>
@@ -313,7 +313,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5150000" />
+    <option name="totallyTimeSpent" value="5154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -325,7 +325,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="761" y="-7" width="782" height="838" extended-state="0" />
+    <frame x="-1088" y="-1059" width="1096" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2536913" />
@@ -383,13 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Painter's Snake/Assets/Scripts/GameManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Painter's Snake/Assets/Materials/Shaders/ScreenSpace.shader">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -400,6 +393,13 @@
             <marker date="1572535382651" expanded="true" signature="338:1878" ph="{...}" />
             <marker date="1572535382651" expanded="true" signature="413:1867" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Painter's Snake/Assets/Scripts/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
         </state>
       </provider>
     </entry>
