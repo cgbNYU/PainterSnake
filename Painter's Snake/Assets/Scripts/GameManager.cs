@@ -97,4 +97,15 @@ public class GameManager : MonoBehaviour
         _p1Script.SetState(GridMove.PlayerState.Painting);
         _p2Script.SetState(GridMove.PlayerState.Painting);
     }
+
+    public void GameEnd()
+    {
+        //Stop the players from painting
+        
+        //Remove player heads
+        
+        //Offer option to screenshot
+        
+        //Offer option to keep playing
+    }
 }
