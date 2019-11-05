@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Materials" t="Include">
           <e p="Shaders" t="Include">
+            <e p="OilPainting.shader" t="Include" />
             <e p="ScreenSpace.shader" t="Include" />
             <e p="ScreenSpaceUnlit.shader" t="Include" />
           </e>
@@ -144,6 +145,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="CameraRenderTexture.cs" t="Include" />
           <e p="ColorManager.cs" t="Include" />
           <e p="FourWayMove.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
@@ -157,7 +159,9 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Painter's Snake.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

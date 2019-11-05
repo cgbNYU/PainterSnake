@@ -13,6 +13,7 @@ public class GridMove : MonoBehaviour
     public ColorState StartingColor;
     public int PlayerNum;
     public GameObject PaintTrail;
+    public Renderer BrushHead;
     
     //Private
     private Vector3 _moveDir;
@@ -22,6 +23,7 @@ public class GridMove : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
     private GameObject _newTrail;
+    
     
     //private GridManager _grid;
     private int _colorId;
@@ -59,8 +61,9 @@ public class GridMove : MonoBehaviour
         _currentColor = ColorManager.Instance.Mat1;
         //_grid = GameObject.Find("GridManager").GetComponent<GridManager>();
         _target = transform.position;
-        _playerState = PlayerState.Painting;
+        //_playerState = PlayerState.Painting;
         //NewTrail();
+        BrushHead.material = _currentColor;
     }
 
     // Update is called once per frame
@@ -170,6 +173,7 @@ public class GridMove : MonoBehaviour
             }
 
             _colorSwitch = false;
+            BrushHead.material = _currentColor;
         }
     
     }
@@ -208,7 +212,7 @@ public class GridMove : MonoBehaviour
             {
                 //die
                 Debug.Log("Die " + _currentColor);
-                GameManager.Instance.PlayerDeath();
+                GameManager.Instance.PlayerDeath(PlayerNum);
             }
             else
             {
@@ -240,6 +244,7 @@ public class GridMove : MonoBehaviour
     public void SetColor(Material newColor)
     {
         _currentColor = newColor;
+        BrushHead.material = _currentColor;
     }
 
     //Trigger checks for hitting nodes
@@ -248,6 +253,11 @@ public class GridMove : MonoBehaviour
         if (other.CompareTag("Node"))
         {
             NodeColorChange(other.GetComponent<NodeManager>());
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            GameManager.Instance.PlayerDeath(PlayerNum);
         }
     }
 }

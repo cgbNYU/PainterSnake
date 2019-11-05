@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //Public
-    
+    public float StartDelay;
     
     //Private
     private float _timer;
@@ -54,42 +54,45 @@ public class GameManager : MonoBehaviour
         _p2 = Instantiate(Resources.Load<GameObject>("Prefabs/Brush2"));
         _p2Script = _p2.GetComponent<GridMove>();
         _p2Script.SetState(GridMove.PlayerState.Idle);
-
-        //Launch the game
-        _p1Script.SetState(GridMove.PlayerState.Painting);
-        _p2Script.SetState(GridMove.PlayerState.Painting);
+        
+        StartCoroutine(StartRound());
     }
 
-    public void PlayerDeath()
+    public void PlayerDeath(int playerId)
     {
-        //Pause both players
-        /*_p1Script.SetState(GridMove.PlayerState.Idle);
-        _p2Script.SetState(GridMove.PlayerState.Idle);*/
+        //Player 1 died
+        if (playerId == 0)
+        {
+            Destroy(_p1);
+            //Instantiate players
+            _p1 = Instantiate(Resources.Load<GameObject>("Prefabs/Brush1"));
+            _p1Script = _p1.GetComponent<GridMove>();
+            _p1Script.SetState(GridMove.PlayerState.Idle);
+        }
+        else
+        {
+            Destroy(_p2);
+            _p2 = Instantiate(Resources.Load<GameObject>("Prefabs/Brush2"));
+            _p2Script = _p2.GetComponent<GridMove>();
+            _p2Script.SetState(GridMove.PlayerState.Idle);
+        } 
         
         //Change colors
         ColorManager.Instance.NewColors();
         _p1Script.SetColor(ColorManager.Instance.Mat1);
         _p2Script.SetColor(ColorManager.Instance.Mat1);
-        
-        /*//Reset player position
-        _p1.transform.position = _p1Script.StartPos;
-        _p2.transform.position = _p2Script.StartPos;
-        
-        //Launch
-        _p1Script.SetState(GridMove.PlayerState.Painting);
-        _p2Script.SetState(GridMove.PlayerState.Painting);*/
-        
-        Destroy(_p1);
-        Destroy(_p2);
-        
-        //Instantiate players
-        _p1 = Instantiate(Resources.Load<GameObject>("Prefabs/Brush1"));
-        _p1Script = _p1.GetComponent<GridMove>();
-        _p1Script.SetState(GridMove.PlayerState.Idle);
-        _p2 = Instantiate(Resources.Load<GameObject>("Prefabs/Brush2"));
-        _p2Script = _p2.GetComponent<GridMove>();
-        _p2Script.SetState(GridMove.PlayerState.Idle);
 
+        StartCoroutine(StartRound());
+    }
+
+    private IEnumerator StartRound()
+    {
+        _timer = StartDelay;
+        while (_timer > 0)
+        {
+            _timer -= Time.deltaTime;
+            yield return null;
+        }
         //Launch the game
         _p1Script.SetState(GridMove.PlayerState.Painting);
         _p2Script.SetState(GridMove.PlayerState.Painting);
