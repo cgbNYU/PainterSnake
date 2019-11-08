@@ -147,11 +147,14 @@
         <e p="Scripts" t="Include">
           <e p="CameraRenderTexture.cs" t="Include" />
           <e p="ColorManager.cs" t="Include" />
+          <e p="DecalPainter.cs" t="Include" />
           <e p="FourWayMove.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GridManager.cs" t="Include" />
           <e p="GridMove.cs" t="Include" />
           <e p="NodeManager.cs" t="Include" />
+          <e p="Splat.cs" t="Include" />
+          <e p="SplatParticles.cs" t="Include" />
           <e p="TurnPoint.cs" t="Include" />
         </e>
       </e>

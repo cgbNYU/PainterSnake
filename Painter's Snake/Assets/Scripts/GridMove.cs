@@ -14,6 +14,7 @@ public class GridMove : MonoBehaviour
     public int PlayerNum;
     public GameObject PaintTrail;
     public Renderer BrushHead;
+    public GameObject SplatPrefab;
     
     //Private
     private Vector3 _moveDir;
@@ -23,6 +24,7 @@ public class GridMove : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
     private GameObject _newTrail;
+    private Transform _splatHolder;
     
     
     //private GridManager _grid;
@@ -64,6 +66,7 @@ public class GridMove : MonoBehaviour
         //_playerState = PlayerState.Painting;
         //NewTrail();
         BrushHead.material = _currentColor;
+        _splatHolder = GameObject.Find("SplatHolder").transform;
     }
 
     // Update is called once per frame
@@ -150,8 +153,8 @@ public class GridMove : MonoBehaviour
 
     private void DropTrail(GameObject node)
     {
-        _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintQuad"), node.transform.position, node.transform.rotation);
-        _newTrail.GetComponent<Renderer>().material = _currentColor;
+        _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintSprite"), node.transform.position, node.transform.rotation);
+        _newTrail.GetComponent<SpriteRenderer>().material = _currentColor;
     }
 
     //Hit  button to change your character's color
@@ -211,7 +214,7 @@ public class GridMove : MonoBehaviour
             if (_currentColor == node.NodeColor)
             {
                 //die
-                Debug.Log("Die " + _currentColor);
+                ColorSplash();
                 GameManager.Instance.PlayerDeath(PlayerNum);
             }
             else
@@ -220,6 +223,15 @@ public class GridMove : MonoBehaviour
                 node.ColorChange(_currentColor, _newTrail);
             }
         }
+    }
+
+    private void ColorSplash()
+    {
+        GameObject splat = Instantiate(SplatPrefab, transform.position, Quaternion.identity);
+        splat.transform.SetParent(_splatHolder, true);
+        splat.GetComponent<SpriteRenderer>().material = _currentColor;
+        Splat splatScript = splat.GetComponent<Splat>();
+        splatScript.Initialize();
     }
 
     public void Respawn()

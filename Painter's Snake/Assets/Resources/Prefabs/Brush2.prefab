@@ -102,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2941407857132815058}
-  - component: {fileID: 2941407857132815061}
   - component: {fileID: 2941407857132815060}
   - component: {fileID: 2941407857132815063}
   - component: {fileID: 2941407857132815062}
@@ -128,23 +127,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2941407857132815061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2941407857132815049}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4fb69aa364e8548b00512d2c0b9d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
-  StartDir: {x: 1, y: 0, z: 0}
-  PlayerNum: 0
-  NewPoint: {fileID: 1989130806002384427, guid: 6f837cfbb7da3f447a3bdbddccfe8b8a,
-    type: 3}
 --- !u!114 &2941407857132815060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +148,8 @@ MonoBehaviour:
   PaintTrail: {fileID: 3465963789975527460, guid: 4033dbb7f87585a4aacdf7a52099bca8,
     type: 3}
   BrushHead: {fileID: 7838158692255552910}
+  SplatPrefab: {fileID: 8721220485788068923, guid: 6d8e6037de7c7f54e8fe16a1dcc014fc,
+    type: 3}
 --- !u!61 &2941407857132815063
 BoxCollider2D:
   m_ObjectHideFlags: 0
