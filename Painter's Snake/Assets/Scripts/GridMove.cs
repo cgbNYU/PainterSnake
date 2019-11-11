@@ -83,6 +83,7 @@ public class GridMove : MonoBehaviour
             case PlayerState.Dead:
                 break;
             case PlayerState.Idle:
+                Move();
                 break;
             default:
                 Debug.Log("Player State error");

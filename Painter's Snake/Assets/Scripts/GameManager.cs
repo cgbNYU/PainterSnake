@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject NewPaintButton;
     public GameObject ContinueButton;
     public GameObject QuitButton;
+    public GameObject SavePaintingButton;
     
     //Private
     private float _timer;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+        
+        SavePaintingButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
         NewPaintButton.SetActive(false);
         ContinueButton.SetActive(false);
         QuitButton.SetActive(false);
+        SavePaintingButton.SetActive(false);
         
         //Instantiate color manager
         GameObject colorManager = Instantiate(Resources.Load<GameObject>("Prefabs/ColorManager"));
@@ -110,14 +114,21 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        Debug.Log("End Game");
         //Stop the players from painting
+        _p1Script.SetState(GridMove.PlayerState.Idle);
+        _p2Script.SetState(GridMove.PlayerState.Idle);
         
         //Remove player heads
+        Destroy(_p1);
+        Destroy(_p2);
         
         //Offer option to screenshot
-        
         //Offer option to keep playing
+        TitleText.text = "Game Over";
+        NewPaintButton.SetActive(true);
+        ContinueButton.SetActive(true);
+        QuitButton.SetActive(true);
+        SavePaintingButton.SetActive(true);
     }
 
     public void QuitGame()
