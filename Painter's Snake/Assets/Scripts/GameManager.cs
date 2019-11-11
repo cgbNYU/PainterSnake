@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Starts each round and spawns  the rest of the game 
 //handles the timing of spawning everything
@@ -8,6 +9,10 @@ public class GameManager : MonoBehaviour
 {
     //Public
     public float StartDelay;
+    public Text TitleText;
+    public GameObject NewPaintButton;
+    public GameObject ContinueButton;
+    public GameObject QuitButton;
     
     //Private
     private float _timer;
@@ -27,8 +32,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
-        
-        GameStart();
     }
 
     // Update is called once per frame
@@ -37,8 +40,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void GameStart()
+    public void GameStart()
     {
+        //Turn off menu
+        TitleText.text = "";
+        NewPaintButton.SetActive(false);
+        ContinueButton.SetActive(false);
+        QuitButton.SetActive(false);
+        
         //Instantiate color manager
         GameObject colorManager = Instantiate(Resources.Load<GameObject>("Prefabs/ColorManager"));
         colorManager.name = "ColorManager";
@@ -101,6 +110,7 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        Debug.Log("End Game");
         //Stop the players from painting
         
         //Remove player heads
@@ -108,5 +118,10 @@ public class GameManager : MonoBehaviour
         //Offer option to screenshot
         
         //Offer option to keep playing
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

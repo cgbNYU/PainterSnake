@@ -31,6 +31,9 @@ public class ColorManager : MonoBehaviour
     //Color layering int
     public int SortNum;
     
+    //Determines if you are finished
+    private bool _lastRound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,18 +43,36 @@ public class ColorManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         SortNum = 0;
-        NewColors();
+        
+        StartingColors();
+        _lastRound = false;
+    }
+
+    private void StartingColors()
+    {
+        Mat1 = PaintMaterial[_colorNum];
+        Mat2 = PaintMaterial[_colorNum + 1];
+        _colorNum++;
     }
 
     public void NewColors()
     {
-        if (_colorNum == PaintMaterial.Length - 1)
+        if (_lastRound)
         {
-            _colorNum = 0;
+            GameManager.Instance.GameEnd();
         }
-        Mat1 = PaintMaterial[_colorNum];
-        Mat2 = PaintMaterial[_colorNum + 1];
-        _colorNum++;
+        else if (_colorNum == PaintMaterial.Length - 1)
+        {
+            Mat1 = PaintMaterial[_colorNum];
+            Mat2 = PaintMaterial[0];
+            _lastRound = true;
+        }
+        else
+        {
+            Mat1 = PaintMaterial[_colorNum];
+            Mat2 = PaintMaterial[_colorNum + 1];
+            _colorNum++;
+        }
     }
 
     public void IncreaseSort()
