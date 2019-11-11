@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath(int playerId)
     {
+        ColorManager.Instance.IncreaseSort();
         //Player 1 died
         if (playerId == 0)
         {

@@ -53,4 +53,9 @@ public class ColorManager : MonoBehaviour
         Mat2 = PaintMaterial[_colorNum + 1];
         _colorNum++;
     }
+
+    public void IncreaseSort()
+    {
+        SortNum++;
+    }
 }

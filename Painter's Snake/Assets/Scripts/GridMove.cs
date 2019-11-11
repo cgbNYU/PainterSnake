@@ -15,6 +15,7 @@ public class GridMove : MonoBehaviour
     public GameObject PaintTrail;
     public Renderer BrushHead;
     public GameObject SplatPrefab;
+    public ParticleSystem SplatParticles;
     
     //Private
     private Vector3 _moveDir;
@@ -154,7 +155,9 @@ public class GridMove : MonoBehaviour
     private void DropTrail(GameObject node)
     {
         _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintSprite"), node.transform.position, node.transform.rotation);
-        _newTrail.GetComponent<SpriteRenderer>().material = _currentColor;
+        SpriteRenderer trailSprite = _newTrail.GetComponent<SpriteRenderer>();
+        trailSprite.material = _currentColor;
+        trailSprite.sortingOrder = ColorManager.Instance.SortNum;
     }
 
     //Hit  button to change your character's color
@@ -227,9 +230,15 @@ public class GridMove : MonoBehaviour
 
     private void ColorSplash()
     {
+        SplatParticles.transform.position = transform.position;
+        SplatParticles.Play();
+        ColorManager.Instance.IncreaseSort();
         GameObject splat = Instantiate(SplatPrefab, transform.position, Quaternion.identity);
         splat.transform.SetParent(_splatHolder, true);
-        splat.GetComponent<SpriteRenderer>().material = _currentColor;
+        SpriteRenderer splatSprite = splat.GetComponent<SpriteRenderer>();
+        splatSprite.material = _currentColor;
+        splatSprite.sortingOrder = ColorManager.Instance.SortNum;
+        ColorManager.Instance.IncreaseSort();
         Splat splatScript = splat.GetComponent<Splat>();
         splatScript.Initialize();
     }
