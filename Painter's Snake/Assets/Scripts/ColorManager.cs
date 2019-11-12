@@ -45,16 +45,18 @@ public class ColorManager : MonoBehaviour
         
         SortNum = 0;
         
-        StartingColors();
-        _lastRound = false;
+        //StartingColors();
+        
     }
 
-    private void StartingColors()
+    public void StartingColors()
     {
         _colorNum = 0;
         Mat1 = PaintMaterial[_colorNum];
         Mat2 = PaintMaterial[_colorNum + 1];
         _colorNum++;
+        
+        _lastRound = false;
     }
 
     public void NewColors()

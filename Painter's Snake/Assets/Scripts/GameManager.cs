@@ -71,12 +71,15 @@ public class GameManager : MonoBehaviour
         }
         GameObject colorManager = Instantiate(Resources.Load<GameObject>("Prefabs/ColorManager"));
         colorManager.name = "ColorManager";
-        colorManager.GetComponent<ColorManager>().SortNum = 0;
+        ColorManager colorScript = colorManager.GetComponent<ColorManager>();
+        colorScript.SortNum = 0;
+        colorScript.StartingColors();
         
         //Instantiate Grid Manager
         if (GridManager.Instance != null)
         {
             Destroy(GridManager.Instance);
+            
         }
         GameObject grid = Instantiate(Resources.Load<GameObject>("Prefabs/GridManager"));
         grid.name = "GridManager";
