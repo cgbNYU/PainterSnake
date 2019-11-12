@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject ContinueButton;
     public GameObject QuitButton;
     public GameObject SavePaintingButton;
+    public GameObject PaintHolder;
+    public GameObject SplatHolder;
     
     //Private
     private float _timer;
@@ -35,12 +37,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         
         SavePaintingButton.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        AudioManager.Instance.PlaySound(AudioManager.Instance.BackgroundMusic);
     }
 
     public void GameStart()
@@ -52,11 +49,35 @@ public class GameManager : MonoBehaviour
         QuitButton.SetActive(false);
         SavePaintingButton.SetActive(false);
         
+        //Instantiate Holders
+        if (PaintHolder != null)
+        {
+            Destroy(PaintHolder);
+        }
+        PaintHolder = Instantiate(Resources.Load<GameObject>("Prefabs/PaintHolder"));
+        PaintHolder.name = "PaintHolder";
+
+        if (SplatHolder != null)
+        {
+            Destroy(SplatHolder);
+        }
+        SplatHolder = Instantiate(Resources.Load<GameObject>("Prefabs/SplatHolder"));
+        SplatHolder.name = "SplatHolder";
+        
         //Instantiate color manager
+        if (ColorManager.Instance != null)
+        {
+            Destroy(ColorManager.Instance);
+        }
         GameObject colorManager = Instantiate(Resources.Load<GameObject>("Prefabs/ColorManager"));
         colorManager.name = "ColorManager";
+        colorManager.GetComponent<ColorManager>().SortNum = 0;
         
         //Instantiate Grid Manager
+        if (GridManager.Instance != null)
+        {
+            Destroy(GridManager.Instance);
+        }
         GameObject grid = Instantiate(Resources.Load<GameObject>("Prefabs/GridManager"));
         grid.name = "GridManager";
 

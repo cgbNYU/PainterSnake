@@ -26,6 +26,7 @@ public class GridMove : MonoBehaviour
     private bool _colorSwitch;
     private GameObject _newTrail;
     private Transform _splatHolder;
+    private Transform _paintHolder;
     
     
     //private GridManager _grid;
@@ -67,7 +68,9 @@ public class GridMove : MonoBehaviour
         //_playerState = PlayerState.Painting;
         //NewTrail();
         BrushHead.material = _currentColor;
+        //Find the holders
         _splatHolder = GameObject.Find("SplatHolder").transform;
+        _paintHolder = GameObject.Find("PaintHolder").transform;
     }
 
     // Update is called once per frame
@@ -122,6 +125,7 @@ public class GridMove : MonoBehaviour
                 //TurnPoint();
                 //NewTrail();
                 _prevDir = _moveDir;
+                AudioManager.Instance.PlaySound(AudioManager.Instance.TurnSounds);
             }
         }
         
@@ -156,6 +160,7 @@ public class GridMove : MonoBehaviour
     private void DropTrail(GameObject node)
     {
         _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintSprite"), node.transform.position, node.transform.rotation);
+        _newTrail.transform.SetParent(_paintHolder, true);
         SpriteRenderer trailSprite = _newTrail.GetComponent<SpriteRenderer>();
         trailSprite.material = _currentColor;
         trailSprite.sortingOrder = ColorManager.Instance.SortNum;
@@ -167,6 +172,7 @@ public class GridMove : MonoBehaviour
         if (_rewiredPlayer.GetButtonDown("ColorChange"))
         {
             _colorSwitch = true;
+            AudioManager.Instance.PlaySound(AudioManager.Instance.ColorSwitchSounds);
         }
         if (transform.position == _target && _colorSwitch)
         {
@@ -219,6 +225,7 @@ public class GridMove : MonoBehaviour
             {
                 //die
                 ColorSplash();
+                AudioManager.Instance.PlaySound(AudioManager.Instance.CrashSounds);
                 GameManager.Instance.PlayerDeath(PlayerNum);
             }
             else

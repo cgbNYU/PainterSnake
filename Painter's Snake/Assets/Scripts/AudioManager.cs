@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] PaintSounds;
 
+    public AudioClip[] TurnSounds;
+
     public AudioClip[] RoundCountSounds;
 
     public AudioClip[] MenuMoveSounds;
@@ -27,7 +29,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource _source;
     
     //Singleton
-    public AudioManager Instance;
+    public static AudioManager Instance;
     
     // Start is called before the first frame update
     void Start()

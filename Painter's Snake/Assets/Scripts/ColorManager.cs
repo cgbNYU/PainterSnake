@@ -42,6 +42,7 @@ public class ColorManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+        
         SortNum = 0;
         
         StartingColors();
@@ -50,6 +51,7 @@ public class ColorManager : MonoBehaviour
 
     private void StartingColors()
     {
+        _colorNum = 0;
         Mat1 = PaintMaterial[_colorNum];
         Mat2 = PaintMaterial[_colorNum + 1];
         _colorNum++;
