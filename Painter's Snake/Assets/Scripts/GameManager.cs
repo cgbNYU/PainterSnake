@@ -52,22 +52,39 @@ public class GameManager : MonoBehaviour
         //Instantiate Holders
         if (PaintHolder != null)
         {
-            Destroy(PaintHolder);
+            List<GameObject> children = new List<GameObject>();
+            foreach (Transform child in PaintHolder.transform)
+            {
+                children.Add(child.gameObject);
+            }
+            children.ForEach(child => Destroy(child));
         }
-        PaintHolder = Instantiate(Resources.Load<GameObject>("Prefabs/PaintHolder"));
-        PaintHolder.name = "PaintHolder";
+        else
+        {
+            PaintHolder = Instantiate(Resources.Load<GameObject>("Prefabs/PaintHolder"));
+            PaintHolder.name = "PaintHolder";
+        }
 
         if (SplatHolder != null)
         {
-            Destroy(SplatHolder);
+            List<GameObject> children = new List<GameObject>();
+            foreach (Transform child in SplatHolder.transform)
+            {
+                children.Add(child.gameObject);
+            }
+            children.ForEach(child => Destroy(child));
         }
-        SplatHolder = Instantiate(Resources.Load<GameObject>("Prefabs/SplatHolder"));
-        SplatHolder.name = "SplatHolder";
-        
+        else
+        {
+            SplatHolder = Instantiate(Resources.Load<GameObject>("Prefabs/SplatHolder"));
+            SplatHolder.name = "SplatHolder";
+        }
+
         //Instantiate color manager
         if (ColorManager.Instance != null)
         {
-            Destroy(ColorManager.Instance);
+            Destroy(ColorManager.Instance.gameObject);
+            ColorManager.Instance = null;
         }
         GameObject colorManager = Instantiate(Resources.Load<GameObject>("Prefabs/ColorManager"));
         colorManager.name = "ColorManager";
@@ -78,8 +95,8 @@ public class GameManager : MonoBehaviour
         //Instantiate Grid Manager
         if (GridManager.Instance != null)
         {
-            Destroy(GridManager.Instance);
-            
+            Destroy(GridManager.Instance.gameObject);
+            GridManager.Instance = null;
         }
         GameObject grid = Instantiate(Resources.Load<GameObject>("Prefabs/GridManager"));
         grid.name = "GridManager";

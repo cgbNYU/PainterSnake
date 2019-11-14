@@ -25,8 +25,8 @@ public class GridMove : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _colorSwitch;
     private GameObject _newTrail;
-    private Transform _splatHolder;
-    private Transform _paintHolder;
+    public Transform _splatHolder;
+    public Transform _paintHolder;
     
     
     //private GridManager _grid;
