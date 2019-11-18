@@ -159,7 +159,16 @@ public class GridMove : MonoBehaviour
 
     private void DropTrail(GameObject node)
     {
-        _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintSprite"), node.transform.position, node.transform.rotation);
+        Vector3 rotDir = Vector3.zero;
+        if (_moveDir == Vector3.up || _moveDir == Vector3.down)
+        {
+            rotDir = new Vector3(0, 0, 90);
+        }
+        else
+        {
+            rotDir = Vector3.zero;
+        }
+        _newTrail = (GameObject)Instantiate(Resources.Load("Prefabs/PaintSprite"), node.transform.position, Quaternion.Euler(rotDir));
         _newTrail.transform.SetParent(_paintHolder, true);
         SpriteRenderer trailSprite = _newTrail.GetComponent<SpriteRenderer>();
         trailSprite.material = _currentColor;

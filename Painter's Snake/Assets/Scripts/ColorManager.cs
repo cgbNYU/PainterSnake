@@ -43,7 +43,7 @@ public class ColorManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
         
-        SortNum = 0;
+        SortNum = 1;
         
         //StartingColors();
         
