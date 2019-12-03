@@ -18,7 +18,7 @@ namespace FreeDraw
         public static int Pen_Width = 3;
 
         public Texture2D PaintStamp;
-
+        private float[,] _paintStampAlphas;
 
         public delegate void Brush_Function(Vector2 world_position);
         // This is the function called when a left click happens
@@ -44,6 +44,8 @@ namespace FreeDraw
         Color32[] cur_colors;
         bool mouse_was_previously_held_down = false;
         bool no_drawing_on_current_drag = false;
+
+        
 
 
 
@@ -259,8 +261,12 @@ namespace FreeDraw
 
                 for (int y = center_y - pen_thickness; y <= center_y + pen_thickness; y++)
                 {
-                    Color textureBasedColor = new Color(color_of_pen.r, color_of_pen.g, color_of_pen.b, PaintStamp.GetPixel(x,y).a);
-                    MarkPixelToChange(x, y, textureBasedColor);
+                    float pixelAlpha = _paintStampAlphas[x - center_x, y - center_y];
+                    if (pixelAlpha > 0)
+                    {
+                        Color textureBasedColor = new Color(color_of_pen.r, color_of_pen.g, color_of_pen.b, pixelAlpha);
+                        MarkPixelToChange(x, y, textureBasedColor);
+                    }
                 }
             }
         }
@@ -310,6 +316,7 @@ namespace FreeDraw
         }
         public void ApplyMarkedPixelChanges()
         {
+            Debug.Log("Apply Pixel Changes");
             drawable_texture.SetPixels32(cur_colors);
             drawable_texture.Apply();
         }
@@ -376,7 +383,17 @@ namespace FreeDraw
             drawable_sprite = this.GetComponent<SpriteRenderer>().sprite;
             drawable_texture = drawable_sprite.texture;
 
-            Pen_Width = PaintStamp.width;
+            Pen_Width = PaintStamp.width/2;
+            
+            //Grab the alpha values from the Paint Stamp and store them in a 2D Array
+            _paintStampAlphas = new float[PaintStamp.width, PaintStamp.height];
+            for (int x = 0; x < PaintStamp.width; x++)
+            {
+                for (int y = 0; y < PaintStamp.height; y++)
+                {
+                    _paintStampAlphas[x, y] = PaintStamp.GetPixel(x, y).a;
+                }
+            }
 
             // Initialize clean pixels to use
             clean_colours_array = new Color[(int)drawable_sprite.rect.width * (int)drawable_sprite.rect.height];
