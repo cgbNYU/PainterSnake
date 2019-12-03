@@ -17,6 +17,14 @@ public class SplatParticles : MonoBehaviour
         _splatHolder = GameObject.Find("SplatHolder").transform;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SplatParticleSystem.Play();
+        }
+    }
+
     private void OnParticleCollision(GameObject other)
     {
         ParticlePhysicsExtensions.GetCollisionEvents(SplatParticleSystem, other, _collisionEvents);

@@ -247,8 +247,8 @@ public class GridMove : MonoBehaviour
 
     private void ColorSplash()
     {
-        SplatParticles.transform.position = transform.position;
-        SplatParticles.Play();
+        ParticleSystem newParticles = Instantiate(SplatParticles, transform.position, SplatParticles.transform.rotation);
+        newParticles.GetComponent<Renderer>().material = _currentColor;
         ColorManager.Instance.IncreaseSort();
         GameObject splat = Instantiate(SplatPrefab, transform.position, Quaternion.identity);
         splat.transform.SetParent(_splatHolder, true);
