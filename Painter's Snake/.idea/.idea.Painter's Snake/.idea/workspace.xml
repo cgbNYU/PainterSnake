@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="137a4dd6-ae97-45f0-aeda-8895b2ea223f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/BluePaintSpace.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BluePaintSpace.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Brush1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Brush1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Brush2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Brush2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Node.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Node.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/PaintSprite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/PaintSprite.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/SplatParticles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/SplatParticles.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SplatParticles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SplatParticles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,15 +59,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="7983" />
+          <entry key="cs" value="8596" />
           <entry key="shader" value="1" />
-          <entry key="txt" value="773" />
+          <entry key="txt" value="893" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="7983" />
-          <entry key="PLAIN_TEXT" value="773" />
+          <entry key="C#" value="8596" />
+          <entry key="PLAIN_TEXT" value="893" />
           <entry key="ShaderLab" value="1" />
         </counts>
       </usages-collector>
@@ -254,64 +246,67 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="239" column="74" lean-forward="true" selection-start-line="239" selection-start-column="74" selection-end-line="239" selection-end-column="74" />
+            <state relative-caret-position="290">
+              <caret line="255" column="56" lean-forward="true" selection-start-line="255" selection-start-column="56" selection-end-line="255" selection-end-column="56" />
               <folding>
-                <marker date="1575331281780" expanded="false" signature="6:76" ph="..." />
-                <marker date="1575331281780" expanded="true" signature="96:15641" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="190:468" ph="/* REQUIRES A COLLIDER2D to function ... */" />
-                <marker date="1575331281780" expanded="true" signature="510:15639" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="866:1042" ph="/* This is the function called when a left click happens ... */" />
-                <marker date="1575331281780" expanded="true" signature="1849:1967" ph="/* BRUSH TYPES. Implement your own here ... */" />
-                <marker date="1575331281780" expanded="true" signature="1978:2115" ph="/* When you want to make your own type of brush effects, ... */" />
-                <marker date="1575331281780" expanded="true" signature="2173:3756" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="2471:2817" ph="/* FILL IN CODE BELOW HERE ... */" />
-                <marker date="1575331281780" expanded="true" signature="2873:3127" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="2904:3043" ph="/* THIS IS THE FIRST CLICK ... */" />
-                <marker date="1575331281780" expanded="true" signature="3144:3396" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="3175:3293" ph="/* THE USER IS DRAGGING ... */" />
-                <marker date="1575331281780" expanded="true" signature="3409:3583" ph="/* 3. Actually apply the changes we marked earlier ... */" />
-                <marker date="1575331281780" expanded="true" signature="3820:5403" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="4118:4464" ph="/* FILL IN CODE BELOW HERE ... */" />
-                <marker date="1575331281780" expanded="true" signature="4520:4774" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="4551:4690" ph="/* THIS IS THE FIRST CLICK ... */" />
-                <marker date="1575331281780" expanded="true" signature="4791:5043" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="4822:4940" ph="/* THE USER IS DRAGGING ... */" />
-                <marker date="1575331281780" expanded="true" signature="5056:5230" ph="/* 3. Actually apply the changes we marked earlier ... */" />
-                <marker date="1575331281780" expanded="true" signature="5424:5602" ph="/* Default brush type. Has width and colour. ... */" />
-                <marker date="1575331281780" expanded="true" signature="5652:6526" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="5847:6071" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="6088:6284" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="6537:6659" ph="/* Helper method used by UI to set what brush the user wants ... */" />
-                <marker date="1575331281780" expanded="true" signature="6693:6837" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="6874:6934" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="7028:7151" ph="/* This is where the magic happens. ... */" />
-                <marker date="1575331281780" expanded="true" signature="7173:8813" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="7370:8534" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="7784:8007" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="7823:7932" ph="/* We're over the texture we're drawing on! ... */" />
-                <marker date="1575331281780" expanded="true" signature="8029:8520" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="8225:8502" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="8272:8421" ph="/* This is a new drag where the user is left clicking off the canvas ... */" />
-                <marker date="1575331281780" expanded="true" signature="8606:8741" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="9055:9758" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="9581:9748" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="9908:10829" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="10256:10819" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="10572:10805" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="10900:11266" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="11368:12151" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="11716:12141" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="12032:12127" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="12216:12569" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="12615:12727" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="12738:13028" ph="/* Directly colours pixels. This method is slower than using MarkPixelsToColour then using ApplyMarkedPixelChange ... */" />
-                <marker date="1575331281780" expanded="true" signature="13122:13741" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="13470:13692" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="13575:13678" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="13814:14661" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="14751:14870" ph="{...}" />
-                <marker date="1575331281780" expanded="true" signature="14902:15633" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="6:76" ph="..." />
+                <marker date="1575393200276" expanded="true" signature="96:16367" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="190:468" ph="/* REQUIRES A COLLIDER2D to function ... */" />
+                <marker date="1575393200276" expanded="true" signature="510:16365" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="909:1085" ph="/* This is the function called when a left click happens ... */" />
+                <marker date="1575393200276" expanded="true" signature="1902:2020" ph="/* BRUSH TYPES. Implement your own here ... */" />
+                <marker date="1575393200276" expanded="true" signature="2031:2168" ph="/* When you want to make your own type of brush effects, ... */" />
+                <marker date="1575393200276" expanded="true" signature="2226:3809" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="2524:2870" ph="/* FILL IN CODE BELOW HERE ... */" />
+                <marker date="1575393200276" expanded="true" signature="2926:3180" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="2957:3096" ph="/* THIS IS THE FIRST CLICK ... */" />
+                <marker date="1575393200276" expanded="true" signature="3197:3449" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="3228:3346" ph="/* THE USER IS DRAGGING ... */" />
+                <marker date="1575393200276" expanded="true" signature="3462:3636" ph="/* 3. Actually apply the changes we marked earlier ... */" />
+                <marker date="1575393200276" expanded="true" signature="3873:5456" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="4171:4517" ph="/* FILL IN CODE BELOW HERE ... */" />
+                <marker date="1575393200276" expanded="true" signature="4573:4827" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="4604:4743" ph="/* THIS IS THE FIRST CLICK ... */" />
+                <marker date="1575393200276" expanded="true" signature="4844:5096" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="4875:4993" ph="/* THE USER IS DRAGGING ... */" />
+                <marker date="1575393200276" expanded="true" signature="5109:5283" ph="/* 3. Actually apply the changes we marked earlier ... */" />
+                <marker date="1575393200276" expanded="true" signature="5477:5655" ph="/* Default brush type. Has width and colour. ... */" />
+                <marker date="1575393200276" expanded="true" signature="5705:6579" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="5900:6124" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="6141:6337" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="6590:6712" ph="/* Helper method used by UI to set what brush the user wants ... */" />
+                <marker date="1575393200276" expanded="true" signature="6746:6890" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="6927:6987" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="7081:7204" ph="/* This is where the magic happens. ... */" />
+                <marker date="1575393200276" expanded="true" signature="7226:8866" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="7423:8587" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="7837:8060" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="7876:7985" ph="/* We're over the texture we're drawing on! ... */" />
+                <marker date="1575393200276" expanded="true" signature="8082:8573" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="8278:8555" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="8325:8474" ph="/* This is a new drag where the user is left clicking off the canvas ... */" />
+                <marker date="1575393200276" expanded="true" signature="8659:8794" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="9108:9811" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="9634:9801" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="9961:11074" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="10279:11064" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="10619:11050" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="10799:11032" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="11145:11511" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="11613:12396" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="11961:12386" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="12277:12372" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="12461:12814" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="12860:13018" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="13029:13319" ph="/* Directly colours pixels. This method is slower than using MarkPixelsToColour then using ApplyMarkedPixelChange ... */" />
+                <marker date="1575393200276" expanded="true" signature="13413:14032" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="13761:13983" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="13866:13969" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="14105:14952" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="15042:15161" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="15193:16359" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="15720:15919" ph="{...}" />
+                <marker date="1575393200276" expanded="true" signature="15794:15905" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -320,10 +315,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/FreeDraw/Scripts/DrawingSettings.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+            <state relative-caret-position="90">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding>
-                <marker date="1551375449000" expanded="false" signature="6:110" ph="..." />
+                <marker date="1551375449000" expanded="true" signature="6:110" ph="..." />
                 <marker date="1551375449000" expanded="true" signature="130:1949" ph="{...}" />
                 <marker date="1551375449000" expanded="true" signature="232:1947" ph="{...}" />
                 <marker date="1551375449000" expanded="true" signature="501:566" ph="{...}" />
@@ -380,6 +375,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>colourpixels</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -430,10 +430,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1088" />
-    <option name="y" value="-1059" />
-    <option name="width" value="1096" />
-    <option name="height" value="1896" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -515,7 +515,7 @@
       <workItem from="1573748534408" duration="1482000" />
       <workItem from="1574115707191" duration="648000" />
       <workItem from="1574182281542" duration="4656000" />
-      <workItem from="1575322075418" duration="6344000" />
+      <workItem from="1575322075418" duration="10555000" />
     </task>
     <task id="LOCAL-00001" summary="Painting materials are now hooked properly to GridManager">
       <created>1571186451252</created>
@@ -643,11 +643,25 @@
       <option name="project" value="LOCAL" />
       <updated>1574115752556</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="tested out drawing pixels&#10;doesn't work">
+      <created>1575331767472</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1575331767472</updated>
+    </task>
+    <task id="LOCAL-00020" summary="more drawing tests. might work&#10;need to get the correct pixel from the 2d array">
+      <created>1575392796366</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1575392796366</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91519000" />
+    <option name="totallyTimeSpent" value="95730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,7 +673,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1088" y="-1059" width="1096" height="1896" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25096524" />
@@ -715,7 +729,9 @@
     <MESSAGE value="Issues with round restarting not actually resetting the nodes and colors" />
     <MESSAGE value="Fixed round resetting&#10;Downloaded a temporary canvas texture" />
     <MESSAGE value="tried out some art" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried out some art" />
+    <MESSAGE value="tested out drawing pixels&#10;doesn't work" />
+    <MESSAGE value="more drawing tests. might work&#10;need to get the correct pixel from the 2d array" />
+    <option name="LAST_COMMIT_MESSAGE" value="more drawing tests. might work&#10;need to get the correct pixel from the 2d array" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -954,10 +970,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/FreeDraw/Scripts/DrawingSettings.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <marker date="1551375449000" expanded="false" signature="6:110" ph="..." />
+            <marker date="1551375449000" expanded="true" signature="6:110" ph="..." />
             <marker date="1551375449000" expanded="true" signature="130:1949" ph="{...}" />
             <marker date="1551375449000" expanded="true" signature="232:1947" ph="{...}" />
             <marker date="1551375449000" expanded="true" signature="501:566" ph="{...}" />
@@ -975,64 +991,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="239" column="74" lean-forward="true" selection-start-line="239" selection-start-column="74" selection-end-line="239" selection-end-column="74" />
+        <state relative-caret-position="290">
+          <caret line="255" column="56" lean-forward="true" selection-start-line="255" selection-start-column="56" selection-end-line="255" selection-end-column="56" />
           <folding>
-            <marker date="1575331281780" expanded="false" signature="6:76" ph="..." />
-            <marker date="1575331281780" expanded="true" signature="96:15641" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="190:468" ph="/* REQUIRES A COLLIDER2D to function ... */" />
-            <marker date="1575331281780" expanded="true" signature="510:15639" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="866:1042" ph="/* This is the function called when a left click happens ... */" />
-            <marker date="1575331281780" expanded="true" signature="1849:1967" ph="/* BRUSH TYPES. Implement your own here ... */" />
-            <marker date="1575331281780" expanded="true" signature="1978:2115" ph="/* When you want to make your own type of brush effects, ... */" />
-            <marker date="1575331281780" expanded="true" signature="2173:3756" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="2471:2817" ph="/* FILL IN CODE BELOW HERE ... */" />
-            <marker date="1575331281780" expanded="true" signature="2873:3127" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="2904:3043" ph="/* THIS IS THE FIRST CLICK ... */" />
-            <marker date="1575331281780" expanded="true" signature="3144:3396" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="3175:3293" ph="/* THE USER IS DRAGGING ... */" />
-            <marker date="1575331281780" expanded="true" signature="3409:3583" ph="/* 3. Actually apply the changes we marked earlier ... */" />
-            <marker date="1575331281780" expanded="true" signature="3820:5403" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="4118:4464" ph="/* FILL IN CODE BELOW HERE ... */" />
-            <marker date="1575331281780" expanded="true" signature="4520:4774" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="4551:4690" ph="/* THIS IS THE FIRST CLICK ... */" />
-            <marker date="1575331281780" expanded="true" signature="4791:5043" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="4822:4940" ph="/* THE USER IS DRAGGING ... */" />
-            <marker date="1575331281780" expanded="true" signature="5056:5230" ph="/* 3. Actually apply the changes we marked earlier ... */" />
-            <marker date="1575331281780" expanded="true" signature="5424:5602" ph="/* Default brush type. Has width and colour. ... */" />
-            <marker date="1575331281780" expanded="true" signature="5652:6526" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="5847:6071" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="6088:6284" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="6537:6659" ph="/* Helper method used by UI to set what brush the user wants ... */" />
-            <marker date="1575331281780" expanded="true" signature="6693:6837" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="6874:6934" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="7028:7151" ph="/* This is where the magic happens. ... */" />
-            <marker date="1575331281780" expanded="true" signature="7173:8813" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="7370:8534" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="7784:8007" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="7823:7932" ph="/* We're over the texture we're drawing on! ... */" />
-            <marker date="1575331281780" expanded="true" signature="8029:8520" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="8225:8502" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="8272:8421" ph="/* This is a new drag where the user is left clicking off the canvas ... */" />
-            <marker date="1575331281780" expanded="true" signature="8606:8741" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="9055:9758" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="9581:9748" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="9908:10829" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="10256:10819" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="10572:10805" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="10900:11266" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="11368:12151" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="11716:12141" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="12032:12127" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="12216:12569" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="12615:12727" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="12738:13028" ph="/* Directly colours pixels. This method is slower than using MarkPixelsToColour then using ApplyMarkedPixelChange ... */" />
-            <marker date="1575331281780" expanded="true" signature="13122:13741" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="13470:13692" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="13575:13678" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="13814:14661" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="14751:14870" ph="{...}" />
-            <marker date="1575331281780" expanded="true" signature="14902:15633" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="6:76" ph="..." />
+            <marker date="1575393200276" expanded="true" signature="96:16367" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="190:468" ph="/* REQUIRES A COLLIDER2D to function ... */" />
+            <marker date="1575393200276" expanded="true" signature="510:16365" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="909:1085" ph="/* This is the function called when a left click happens ... */" />
+            <marker date="1575393200276" expanded="true" signature="1902:2020" ph="/* BRUSH TYPES. Implement your own here ... */" />
+            <marker date="1575393200276" expanded="true" signature="2031:2168" ph="/* When you want to make your own type of brush effects, ... */" />
+            <marker date="1575393200276" expanded="true" signature="2226:3809" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="2524:2870" ph="/* FILL IN CODE BELOW HERE ... */" />
+            <marker date="1575393200276" expanded="true" signature="2926:3180" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="2957:3096" ph="/* THIS IS THE FIRST CLICK ... */" />
+            <marker date="1575393200276" expanded="true" signature="3197:3449" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="3228:3346" ph="/* THE USER IS DRAGGING ... */" />
+            <marker date="1575393200276" expanded="true" signature="3462:3636" ph="/* 3. Actually apply the changes we marked earlier ... */" />
+            <marker date="1575393200276" expanded="true" signature="3873:5456" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="4171:4517" ph="/* FILL IN CODE BELOW HERE ... */" />
+            <marker date="1575393200276" expanded="true" signature="4573:4827" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="4604:4743" ph="/* THIS IS THE FIRST CLICK ... */" />
+            <marker date="1575393200276" expanded="true" signature="4844:5096" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="4875:4993" ph="/* THE USER IS DRAGGING ... */" />
+            <marker date="1575393200276" expanded="true" signature="5109:5283" ph="/* 3. Actually apply the changes we marked earlier ... */" />
+            <marker date="1575393200276" expanded="true" signature="5477:5655" ph="/* Default brush type. Has width and colour. ... */" />
+            <marker date="1575393200276" expanded="true" signature="5705:6579" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="5900:6124" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="6141:6337" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="6590:6712" ph="/* Helper method used by UI to set what brush the user wants ... */" />
+            <marker date="1575393200276" expanded="true" signature="6746:6890" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="6927:6987" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="7081:7204" ph="/* This is where the magic happens. ... */" />
+            <marker date="1575393200276" expanded="true" signature="7226:8866" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="7423:8587" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="7837:8060" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="7876:7985" ph="/* We're over the texture we're drawing on! ... */" />
+            <marker date="1575393200276" expanded="true" signature="8082:8573" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="8278:8555" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="8325:8474" ph="/* This is a new drag where the user is left clicking off the canvas ... */" />
+            <marker date="1575393200276" expanded="true" signature="8659:8794" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="9108:9811" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="9634:9801" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="9961:11074" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="10279:11064" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="10619:11050" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="10799:11032" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="11145:11511" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="11613:12396" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="11961:12386" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="12277:12372" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="12461:12814" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="12860:13018" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="13029:13319" ph="/* Directly colours pixels. This method is slower than using MarkPixelsToColour then using ApplyMarkedPixelChange ... */" />
+            <marker date="1575393200276" expanded="true" signature="13413:14032" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="13761:13983" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="13866:13969" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="14105:14952" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="15042:15161" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="15193:16359" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="15720:15919" ph="{...}" />
+            <marker date="1575393200276" expanded="true" signature="15794:15905" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -253,15 +253,17 @@ namespace FreeDraw
             int center_y = (int)center_pixel.y;
             //int extra_radius = Mathf.Min(0, pen_thickness - 2);
 
-            for (int x = center_x - pen_thickness; x <= center_x + pen_thickness; x++)
+            for (int i = 0; i <= pen_thickness * 1; i++)
             {
+                int x = center_x - pen_thickness + i;
                 // Check if the X wraps around the image, so we don't draw pixels on the other side of the image
                 if (x >= (int)drawable_sprite.rect.width || x < 0)
                     continue;
 
-                for (int y = center_y - pen_thickness; y <= center_y + pen_thickness; y++)
+                for (int j = 0; j <= pen_thickness * 1; j++)
                 {
-                    float pixelAlpha = _paintStampAlphas[x - center_x, y - center_y];
+                    int y = center_y - pen_thickness + j;
+                    float pixelAlpha = _paintStampAlphas[i, j];
                     if (pixelAlpha > 0)
                     {
                         Color textureBasedColor = new Color(color_of_pen.r, color_of_pen.g, color_of_pen.b, pixelAlpha);
