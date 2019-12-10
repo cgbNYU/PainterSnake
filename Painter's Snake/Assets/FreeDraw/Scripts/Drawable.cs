@@ -17,8 +17,17 @@ namespace FreeDraw
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 3;
 
+        //Paint Stamp
         public Texture2D PaintStamp;
         private float[,] _paintStampAlphas;
+        
+        //Characters
+        public GameObject Player1;
+        public GameObject Player2;
+        public GridMove _p1Script;
+        public GridMove _p2Script;
+        public Collider2D _p1Col;
+        public Collider2D _p2Col;
 
         public delegate void Brush_Function(Vector2 world_position);
         // This is the function called when a left click happens
@@ -111,19 +120,19 @@ namespace FreeDraw
             //if (true)
 
             // If you do care about dragging, use the below if/else structure
-            if (previous_drag_position == Vector2.zero)
-            {
+            //if (previous_drag_position == Vector2.zero)
+            //{
                 // THIS IS THE FIRST CLICK
                 // FILL IN WHATEVER YOU WANT TO DO HERE
                 // Maybe mark multiple pixels to colour?
                 MarkSpriteToColour(pixel_pos, Pen_Width, Pen_Colour);
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 // THE USER IS DRAGGING
                 // Should we do stuff between the previous mouse position and the current one?
-                ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
-            }
+                //ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
+            //}
             ////////////////////////////////////////////////////////////////
 
             // 3. Actually apply the changes we marked earlier
@@ -221,6 +230,25 @@ namespace FreeDraw
                 no_drawing_on_current_drag = false;
             }
             mouse_was_previously_held_down = mouse_held_down;
+            
+            //SNake Version
+            if (_p1Script._playerState == GridMove.PlayerState.Painting)
+            {
+                Collider2D hit1 = Physics2D.OverlapPoint(_p1Col.transform.position);
+                if (hit1 != null && hit1.transform != null)
+                {
+                    current_brush(_p1Col.transform.position);
+                }
+            }
+
+            if (_p2Script._playerState == GridMove.PlayerState.Painting)
+            {
+                Collider2D hit2 = Physics2D.OverlapPoint(_p2Col.transform.position);
+                if (hit2 != null && hit2.transform != null)
+                {
+                    current_brush(_p2Col.transform.position);
+                }
+            }
         }
 
 

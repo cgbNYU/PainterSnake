@@ -24,6 +24,8 @@ public class ColorManager : MonoBehaviour
 
     public Material Mat1;
     public Material Mat2;
+
+    public Color color1;
     
     //Color picking int
     private int _colorNum;
@@ -46,7 +48,7 @@ public class ColorManager : MonoBehaviour
         SortNum = 1;
         
         //StartingColors();
-        
+        color1 = PaintMaterial[0].color;
     }
 
     public void StartingColors()

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FreeDraw;
 using Rewired;
 using UnityEngine;
 
@@ -49,7 +50,7 @@ public class GridMove : MonoBehaviour
         Idle
     }
 
-    private PlayerState _playerState;
+    public PlayerState _playerState;
     
     //Rewired
     private Rewired.Player _rewiredPlayer;
@@ -71,6 +72,20 @@ public class GridMove : MonoBehaviour
         //Find the holders
         _splatHolder = GameObject.Find("SplatHolder").transform;
         _paintHolder = GameObject.Find("PaintHolder").transform;
+        //Find Drawable
+        Drawable draw = FindObjectOfType<Drawable>();
+        if (PlayerNum == 1)
+        {
+            draw.Player1 = gameObject;
+            draw._p1Col = GetComponent<Collider2D>();
+            draw._p1Script = this;
+        }
+        else
+        {
+            draw.Player2 = gameObject;
+            draw._p2Col = GetComponent<Collider2D>();
+            draw._p2Script = this;
+        }
     }
 
     // Update is called once per frame
