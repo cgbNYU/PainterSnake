@@ -237,6 +237,7 @@ namespace FreeDraw
                 Collider2D hit1 = Physics2D.OverlapPoint(_p1Col.transform.position);
                 if (hit1 != null && hit1.transform != null)
                 {
+                    Vector3 paintPos = new Vector3(_p1Col.transform.position.x + PaintStamp.width, _p1Col.transform.position.y + PaintStamp.height, 0);
                     current_brush(_p1Col.transform.position);
                 }
             }

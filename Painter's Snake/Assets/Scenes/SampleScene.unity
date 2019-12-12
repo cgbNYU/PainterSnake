@@ -229,6 +229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintStamp: {fileID: 2800000, guid: d1a52b7b399eb3b40a4b8c9aa8cf6ec7, type: 3}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  _p1Script: {fileID: 0}
+  _p2Script: {fileID: 0}
+  _p1Col: {fileID: 0}
+  _p2Col: {fileID: 0}
   Drawing_Layers:
     serializedVersion: 2
     m_Bits: 256
@@ -317,8 +323,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449217104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -2039,6 +2045,11 @@ PrefabInstance:
       propertyPath: TurnSounds.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 020841094ca51e348b5f99f4c481cec3, type: 3}
+    - target: {fileID: 3419844310115783568, guid: a38a28b4de9128c4b9947669053601de,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38a28b4de9128c4b9947669053601de, type: 3}
 --- !u!1001 &8302656623778837962
