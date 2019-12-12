@@ -133,12 +133,8 @@ public class GridMove : MonoBehaviour
         if (transform.position == _target)
         {
             _target += _moveDir * GridDist;
-            //DropTrail();
             if (_prevDir != _moveDir)
             {
-                //UpdateLine();
-                //TurnPoint();
-                //NewTrail();
                 _prevDir = _moveDir;
                 AudioManager.Instance.PlaySound(AudioManager.Instance.TurnSounds);
             }
@@ -254,7 +250,7 @@ public class GridMove : MonoBehaviour
             }
             else
             {
-                DropTrail(node.gameObject);
+                //DropTrail(node.gameObject);
                 node.ColorChange(_currentColor, _newTrail);
             }
         }
