@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="137a4dd6-ae97-45f0-aeda-8895b2ea223f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Painter's Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FreeDraw/Scripts/Drawable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PaintStrokeTest2.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PaintStrokeTest2.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/PaintStrokeTest2.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PaintStrokeTest2.psd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,18 +96,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cs" value="1152" />
-          <entry key="txt" value="183" />
+          <entry key="txt" value="225" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="C#" value="1152" />
-          <entry key="PLAIN_TEXT" value="183" />
+          <entry key="PLAIN_TEXT" value="225" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="2" />
@@ -655,7 +652,7 @@
       <workItem from="1574103151001" duration="659000" />
       <workItem from="1574720974176" duration="379000" />
       <workItem from="1576085584926" duration="628000" />
-      <workItem from="1576120271845" duration="4537000" />
+      <workItem from="1576120271845" duration="4571000" />
     </task>
     <task id="LOCAL-00001" summary="Painting materials are now hooked properly to GridManager">
       <created>1571186451252</created>
@@ -755,11 +752,18 @@
       <option name="project" value="LOCAL" />
       <updated>1576124127613</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="messed around with paint stuff it no worky">
+      <created>1576127282727</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576127282727</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79562000" />
+    <option name="totallyTimeSpent" value="79596000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,7 +776,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-967" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25692964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -823,7 +826,8 @@
     <MESSAGE value="Made sprite particle system but it doesn't work&#10;Splats and paint trails now layer properly" />
     <MESSAGE value="testing push from desktop" />
     <MESSAGE value="made new paint sprite I think is decent" />
-    <option name="LAST_COMMIT_MESSAGE" value="made new paint sprite I think is decent" />
+    <MESSAGE value="messed around with paint stuff it no worky" />
+    <option name="LAST_COMMIT_MESSAGE" value="messed around with paint stuff it no worky" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
