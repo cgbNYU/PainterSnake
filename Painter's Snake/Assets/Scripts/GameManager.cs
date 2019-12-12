@@ -176,4 +176,6 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    //Test commit comment
 }
